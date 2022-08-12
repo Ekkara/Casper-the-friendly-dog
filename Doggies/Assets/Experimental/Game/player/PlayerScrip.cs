@@ -43,15 +43,11 @@ public class PlayerScrip : MonoBehaviour
                 RB.velocity += new Vector2(0, Physics2D.gravity.y * shortJmpMultiplier * Time.deltaTime);
             }
         }
-        else {//falling is 0
-         
-        }
         // check if can jump
         RaycastHit2D leftHit, rightHit;
         rightHit = Physics2D.Raycast(transform.position + new Vector3(jumpRayOffset.x, jumpRayOffset.y), Vector3.down, rayLength);
         leftHit = Physics2D.Raycast(transform.position + new Vector3(-jumpRayOffset.x, jumpRayOffset.y), Vector3.down, rayLength);
         canJump = (rightHit.collider != null) || (leftHit.collider != null);
-        Debug.Log(rightHit.normal);
     }
 
     private void FixedUpdate() {

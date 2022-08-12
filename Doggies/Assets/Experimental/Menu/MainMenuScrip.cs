@@ -46,7 +46,8 @@ public class MainMenuScrip : MonoBehaviour
     [SerializeField] float arrowOffset;
     void UpdateMenu() {
         currentOption = GetMenuFormatedPointer(currentOption);
-        arrowPointer.rectTransform.position = menuOptions[currentOption].transform.position + new Vector3(-arrowOffset - (menuOptions[currentOption].gameObject.GetComponent<RectTransform>().rect.width / 2), 0, 0);
+        arrowPointer.rectTransform.position = menuOptions[currentOption].transform.position + 
+            new Vector3(-arrowOffset - (menuOptions[currentOption].gameObject.GetComponent<RectTransform>().rect.width / 2), 0, 0);
 
         menuOptions[oldOption].UpdateColors(deselectedTextColor, deselectedImageColor);
         oldOption = currentOption;
